@@ -179,7 +179,7 @@ void TeleInfo::loop() {
   }
 }
 void TeleInfo::publish_value_(const std::string &tag, const std::string &val) {
-  ESP_LOGV(TAG, "Received frame: tag %s value %s", tag, val);
+  ESP_LOGV(TAG, "Received frame: tag %s value %s", tag.c_str(), val.c_str());
   for (auto *element : teleinfo_listeners_) {
     if (tag != element->tag)
       continue;
